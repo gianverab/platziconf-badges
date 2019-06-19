@@ -1,39 +1,25 @@
 import React, { Component } from "react";
 
 class BadgeForm extends Component {
-  state = {
-    firstName: "",
-    lastName: "",
-    email: "",
-    jobTitle: "",
-    twitter: ""
-  };
-
-  handleChange = e => {
-    this.setState({
-      [e.target.name]: e.target.value
-    });
-  };
-
-  handleClick = e => {
-    console.log("Button was clicked!");
-  };
-
-  handleSubmit = e => {
-    e.preventDefault();
-    console.log(this.state);
-  };
-
   render() {
-    const { firstName, lastName, email, jobTitle, twitter } = this.state;
+    const {
+      firstName,
+      lastName,
+      email,
+      jobTitle,
+      twitter,
+      handleChange,
+      handleClick,
+      handleSubmit
+    } = this.props;
     return (
       <div>
         <h1>New Attendant</h1>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label>First Name</label>
             <input
-              onChange={this.handleChange}
+              onChange={handleChange}
               className="form-control"
               type="text"
               name="firstName"
@@ -44,7 +30,7 @@ class BadgeForm extends Component {
           <div className="form-group">
             <label>Last Name</label>
             <input
-              onChange={this.handleChange}
+              onChange={handleChange}
               className="form-control"
               type="text"
               name="lastName"
@@ -55,7 +41,7 @@ class BadgeForm extends Component {
           <div className="form-group">
             <label>Email</label>
             <input
-              onChange={this.handleChange}
+              onChange={handleChange}
               className="form-control"
               type="email"
               name="email"
@@ -66,7 +52,7 @@ class BadgeForm extends Component {
           <div className="form-group">
             <label>Job Title</label>
             <input
-              onChange={this.handleChange}
+              onChange={handleChange}
               className="form-control"
               type="text"
               name="jobTitle"
@@ -77,7 +63,7 @@ class BadgeForm extends Component {
           <div className="form-group">
             <label>Twitter</label>
             <input
-              onChange={this.handleChange}
+              onChange={handleChange}
               className="form-control"
               type="text"
               name="twitter"
@@ -85,7 +71,7 @@ class BadgeForm extends Component {
             />
           </div>
 
-          <button onClick={this.handleClick} className="btn btn-primary">
+          <button onClick={handleClick} className="btn btn-primary">
             Save
           </button>
         </form>

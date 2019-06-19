@@ -7,7 +7,30 @@ import header from "../images/badge-header.svg";
 import "./styles/ConfApp.css";
 
 class ConfApp extends Component {
+  state = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    jobTitle: "",
+    twitter: ""
+  };
+
+  handleChange = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
+
+  handleClick = e => {
+    console.log("Button was clicked!");
+  };
+
+  handleSubmit = e => {
+    e.preventDefault();
+    console.log(this.state);
+  };
   render() {
+    const { firstName, lastName, email, jobTitle, twitter } = this.state;
     return (
       <div>
         <Navbar />
@@ -20,7 +43,16 @@ class ConfApp extends Component {
               <Badge />
             </div>
             <div className="col-6">
-              <BadgeForm />
+              <BadgeForm
+              handleChange={this.handleChange}
+              handleClick={this.handleClick}
+              handleSubmit={this.handleSubmit}
+              firstName={firstName}
+              lastName={lastName}
+              email={email}
+              jobTitle={jobTitle}
+              twitter={twitter}
+              />
             </div>
           </div>
         </div>
