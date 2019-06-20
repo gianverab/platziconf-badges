@@ -2,16 +2,7 @@ import React, { Component } from "react";
 
 class BadgeForm extends Component {
   render() {
-    const {
-      firstName,
-      lastName,
-      email,
-      jobTitle,
-      twitter,
-      handleChange,
-      handleClick,
-      handleSubmit
-    } = this.props;
+    const { formValues, handleChange, handleClick, handleSubmit } = this.props;
     return (
       <div>
         <h1>New Attendant</h1>
@@ -23,7 +14,7 @@ class BadgeForm extends Component {
               className="form-control"
               type="text"
               name="firstName"
-              value={firstName}
+              value={formValues.firstName}
             />
           </div>
 
@@ -34,7 +25,7 @@ class BadgeForm extends Component {
               className="form-control"
               type="text"
               name="lastName"
-              value={lastName}
+              value={formValues.lastName}
             />
           </div>
 
@@ -45,7 +36,7 @@ class BadgeForm extends Component {
               className="form-control"
               type="email"
               name="email"
-              value={email}
+              value={formValues.email}
             />
           </div>
 
@@ -56,7 +47,7 @@ class BadgeForm extends Component {
               className="form-control"
               type="text"
               name="jobTitle"
-              value={jobTitle}
+              value={formValues.jobTitle}
             />
           </div>
 
@@ -67,7 +58,7 @@ class BadgeForm extends Component {
               className="form-control"
               type="text"
               name="twitter"
-              value={twitter}
+              value={formValues.twitter}
             />
           </div>
 

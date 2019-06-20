@@ -5,6 +5,7 @@ import "./styles/Badge.css";
 
 class Badge extends Component {
   render() {
+    const { formValues } = this.props;
     return (
       <div className="Badge">
         <header className="Badge__header">
@@ -18,12 +19,14 @@ class Badge extends Component {
               className="Badge__avatar"
             />
             <h1>
-              Giancarlo <br /> Vera
+              {formValues.firstName}
+              <br />
+              {formValues.lastName}
             </h1>
           </div>
           <div className="Badge__section-info">
-            <h3>Frontend Developer</h3>
-            <span>@gianvera</span>
+            <h3>{formValues.jobTitle}</h3>
+            <span>@{formValues.twitter}</span>
           </div>
         </main>
         <footer className="Badge__footer">#platziconf</footer>

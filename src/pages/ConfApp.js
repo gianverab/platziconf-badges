@@ -8,16 +8,21 @@ import "./styles/ConfApp.css";
 
 class ConfApp extends Component {
   state = {
-    firstName: "",
-    lastName: "",
-    email: "",
-    jobTitle: "",
-    twitter: ""
+    form: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      jobTitle: "",
+      twitter: ""
+    }
   };
 
   handleChange = e => {
     this.setState({
-      [e.target.name]: e.target.value
+      form: {
+        ...this.state.form,
+        [e.target.name]: e.target.value
+      }
     });
   };
 
@@ -30,7 +35,6 @@ class ConfApp extends Component {
     console.log(this.state);
   };
   render() {
-    const { firstName, lastName, email, jobTitle, twitter } = this.state;
     return (
       <div>
         <Navbar />
@@ -40,18 +44,14 @@ class ConfApp extends Component {
         <div className="container">
           <div className="row">
             <div className="col-6">
-              <Badge />
+              <Badge formValues={this.state.form} />
             </div>
             <div className="col-6">
               <BadgeForm
-              handleChange={this.handleChange}
-              handleClick={this.handleClick}
-              handleSubmit={this.handleSubmit}
-              firstName={firstName}
-              lastName={lastName}
-              email={email}
-              jobTitle={jobTitle}
-              twitter={twitter}
+                handleChange={this.handleChange}
+                handleClick={this.handleClick}
+                handleSubmit={this.handleSubmit}
+                formValues={this.state.form}
               />
             </div>
           </div>
