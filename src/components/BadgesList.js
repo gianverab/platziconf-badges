@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import "./styles/BadgesList.css";
 
 class BadgesList extends Component {
@@ -18,7 +20,9 @@ class BadgesList extends Component {
                 <h5>
                   {badge.firstName} {badge.lastName}
                 </h5>
-                <p className="BadgesListItem__twitter">@{badge.twitter}</p>
+                <p className="BadgesListItem__twitter">
+                  <FontAwesomeIcon icon={faTwitter} />@{badge.twitter}
+                </p>
                 <p>{badge.jobTitle}</p>
               </div>
             </li>
