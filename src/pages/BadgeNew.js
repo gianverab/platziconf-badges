@@ -35,7 +35,7 @@ class ConfApp extends Component {
   };
   render() {
     return (
-      <div>
+      <React.Fragment>
         <div className="ConfApp__hero">
           <img src={header} alt="Logo" />
         </div>
@@ -54,7 +54,7 @@ class ConfApp extends Component {
             </div>
           </div>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }
