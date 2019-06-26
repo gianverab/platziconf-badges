@@ -1,0 +1,38 @@
+.Home__hero {
+  padding: 2rem 3rem;
+  height: calc(100vh - 4rem);
+  background: url(http://localhost:3000/static/media/stars.1d17360a.svg),
+    #1b1b25;
+  background-repeat: repeat;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 280px auto;
+  grid-gap: 2rem;
+  box-sizing: border-box;
+}
+
+.Home__info {
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.Home__info-btn {
+  width: 60%;
+  align-self: center;
+}
+
+.Home__info-img {
+  margin-bottom: 1.5rem;
+}
+
+.Home__info h1 {
+  font-size: 2.4rem;
+  text-transform: uppercase;
+}
+
+.Home__img {
+  width: 100%;
+  max-width: 500px;
+}

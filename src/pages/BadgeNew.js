@@ -3,9 +3,9 @@ import React, { Component } from "react";
 import Badge from "../components/Badge";
 import BadgeForm from "../components/BadgeForm";
 import header from "../images/badge-header.svg";
-import "./styles/ConfApp.css";
+import "./styles/BadgeNew.css";
 
-class ConfApp extends Component {
+class BadgeNew extends Component {
   state = {
     form: {
       firstName: "",
@@ -36,7 +36,7 @@ class ConfApp extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="ConfApp__hero">
+        <div className="BadgeNew__hero">
           <img src={header} alt="Logo" />
         </div>
         <div className="container">
@@ -59,4 +59,4 @@ class ConfApp extends Component {
   }
 }
 
-export default ConfApp;
+export default BadgeNew;
