@@ -2,10 +2,15 @@ import React, { Component } from "react";
 
 class BadgeForm extends Component {
   render() {
-    const { formValues, handleChange, handleClick, handleSubmit } = this.props;
+    const {
+      formValues,
+      handleChange,
+      handleClick,
+      handleSubmit,
+      error
+    } = this.props;
     return (
       <div>
-        <h1>New Attendant</h1>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label>First Name</label>
@@ -65,6 +70,8 @@ class BadgeForm extends Component {
           <button onClick={handleClick} className="btn btn-primary">
             Save
           </button>
+
+          {error && <p className="text-danger">{error.message}</p>}
         </form>
       </div>
     );

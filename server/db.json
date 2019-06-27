@@ -15,7 +15,7 @@
       "lastName": "Rodriguez",
       "email": "Ilene66@hotmail.com",
       "jobTitle": "Human Research Architect",
-      "twitter": "MajorRodriguez61545",
+      "twitter": "rodriguez61545",
       "avatarUrl": "https://www.gravatar.com/avatar/d57a8be8cb9219609905da25d5f3e50a?d=identicon"
     },
     {
@@ -456,6 +456,22 @@
       "jobTitle": "Orochi's Son",
       "twitter": "iyagami",
       "id": "AtHgh7f"
+    },
+    {
+      "firstName": "Kyo",
+      "lastName": "Kusanagi",
+      "email": "kusanagi@gmail.com",
+      "jobTitle": "",
+      "twitter": "kusanagi",
+      "id": "OEzOwAl"
+    },
+    {
+      "firstName": "Vanessa",
+      "lastName": "Flores",
+      "email": "vaneyclau2003@hotmail.com",
+      "jobTitle": "Miss Vane",
+      "twitter": "vanemiamor",
+      "id": "cXyQpz_"
     }
   ]
 }

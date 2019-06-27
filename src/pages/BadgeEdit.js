@@ -6,9 +6,9 @@ import PageLoading from "../components/PageLoading";
 import PageError from "../components/PageError";
 import header from "../images/platziconf-logo.svg";
 import api from "../api";
-import "./styles/BadgeNew.css";
+import "./styles/BadgeEdit.css";
 
-class BadgeNew extends Component {
+class BadgeEdit extends Component {
   state = {
     loading: false,
     error: null,
@@ -18,6 +18,21 @@ class BadgeNew extends Component {
       email: "",
       jobTitle: "",
       twitter: ""
+    }
+  };
+
+  componentDidMount() {
+    this.handleFetchData();
+  }
+
+  handleFetchData = async () => {
+    this.setState({ loading: true, error: null });
+
+    try {
+      const data = await api.badges.read(this.props.match.params.badgeId);
+      this.setState({ loading: false, form: data });
+    } catch (error) {
+      this.setState({ loading: false, error: error });
     }
   };
 
@@ -39,7 +54,7 @@ class BadgeNew extends Component {
     this.setState({ loading: true, error: null });
 
     try {
-      await api.badges.create(this.state.form);
+      await api.badges.update(this.props.match.params.badgeId, this.state.form);
       this.setState({ loading: false });
 
       this.props.history.push("/badges");
@@ -60,8 +75,8 @@ class BadgeNew extends Component {
     }
     return (
       <React.Fragment>
-        <div className="BadgeNew__hero">
-          <img src={header} alt="Logo" className="BadgeNew__hero-image" />
+        <div className="BadgeEdit__hero">
+          <img src={header} alt="Logo" className="BadgeEdit__hero-image" />
         </div>
         <div className="container">
           <div className="row">
@@ -75,7 +90,7 @@ class BadgeNew extends Component {
               />
             </div>
             <div className="col-6">
-              <h1>New Attendant</h1>
+              <h1>Edit Attendant</h1>
               <BadgeForm
                 handleChange={this.handleChange}
                 handleClick={this.handleClick}
@@ -91,4 +106,4 @@ class BadgeNew extends Component {
   }
 }
 
-export default BadgeNew;
+export default BadgeEdit;
