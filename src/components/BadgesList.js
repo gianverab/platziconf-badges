@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
+
+import Gravatar from "../components/Gravatar";
 import "./styles/BadgesList.css";
 
 class BadgesList extends Component {
@@ -22,9 +23,8 @@ class BadgesList extends Component {
         <ul className="list-unstyled">
           {this.props.data.map(badge => (
             <li className="BadgesListItem" key={badge.id}>
-              <img
-                src={badge.avatarUrl}
-                alt="avatar"
+              <Gravatar
+                email={badge.email}
                 className="BadgesListItem__avatar"
               />
               <div className="BadgesListItem__info">

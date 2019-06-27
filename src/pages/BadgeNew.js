@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import Badge from "../components/Badge";
 import BadgeForm from "../components/BadgeForm";
 import header from "../images/platziconf-logo.svg";
+import api from "../api";
 import "./styles/BadgeNew.css";
 
 class BadgeNew extends Component {
@@ -29,10 +30,18 @@ class BadgeNew extends Component {
     console.log("Button was clicked!");
   };
 
-  handleSubmit = e => {
+  handleSubmit = async e => {
     e.preventDefault();
-    console.log(this.state);
+    this.setState({ loading: true, error: null });
+
+    try {
+      await api.badges.create(this.state.form);
+      this.setState({ loading: false });
+    } catch (error) {
+      this.setState({ loading: false, error: error });
+    }
   };
+
   render() {
     const { form } = this.state;
     return (
