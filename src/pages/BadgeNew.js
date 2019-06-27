@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import Badge from "../components/Badge";
 import BadgeForm from "../components/BadgeForm";
-import header from "../images/badge-header.svg";
+import header from "../images/platziconf-logo.svg";
 import "./styles/BadgeNew.css";
 
 class BadgeNew extends Component {
@@ -34,15 +34,22 @@ class BadgeNew extends Component {
     console.log(this.state);
   };
   render() {
+    const { form } = this.state;
     return (
       <React.Fragment>
         <div className="BadgeNew__hero">
-          <img src={header} alt="Logo" />
+          <img src={header} alt="Logo" className="BadgeNew__hero-image" />
         </div>
         <div className="container">
           <div className="row">
             <div className="col-6">
-              <Badge formValues={this.state.form} />
+              <Badge
+                firstName={form.firstName || "FIRST_NAME"}
+                lastName={form.lastName || "LAST_NAME"}
+                twitter={form.twitter || "twitter"}
+                jobTitle={form.jobTitle || "JOB_TITLE"}
+                email={form.email || "EMAIL"}
+              />
             </div>
             <div className="col-6">
               <BadgeForm
