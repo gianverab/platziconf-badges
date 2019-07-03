@@ -73,6 +73,7 @@ class BadgeEdit extends Component {
     if (error) {
       return <PageError />;
     }
+
     return (
       <React.Fragment>
         <div className="BadgeEdit__hero">

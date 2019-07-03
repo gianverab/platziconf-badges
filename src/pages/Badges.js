@@ -64,7 +64,6 @@ class Badges extends Component {
           <div className="Badges__list">
             <div className="Badges__container">
               <BadgesList data={this.state.data} />
-
               {this.state.loading && <MiniLoader />}
             </div>
           </div>
