@@ -2,10 +2,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import Badge from "../components/Badge";
+import DeleteBadgeModal from "../components/DeleteBadgeModal";
 import confLogo from "../images/platziconf-logo.svg";
 import "./styles/BadgeDetails.css";
 
-const BadgeDetails = ({ data }) => (
+const BadgeDetails = ({
+  data,
+  ModalIsOpen,
+  onCloseModal,
+  onOpenModal,
+  onDeleteBadge
+}) => (
   <React.Fragment>
     <div className="BadgeDetails__hero">
       <div className="container">
@@ -44,7 +51,14 @@ const BadgeDetails = ({ data }) => (
               </Link>
             </div>
             <div>
-              <button className="btn btn-danger">Delete</button>
+              <button onClick={onOpenModal} className="btn btn-danger">
+                Delete
+              </button>
+              <DeleteBadgeModal
+                isOpen={ModalIsOpen}
+                onClose={onCloseModal}
+                onDeleteBadge={onDeleteBadge}
+              />
             </div>
           </React.Fragment>
         </div>
